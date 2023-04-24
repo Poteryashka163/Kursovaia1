@@ -3,9 +3,9 @@ public class Main {
     public static void main(String[] args) {
         EmployeeBook book = new EmployeeBook(10);
 
-        Employee emp1 = new Employee("Ivan Ivanov", 1, 2000, "IT");
+        Employee emp1 = new Employee("Иван Ивонов", 1, 2000, "IT");
         Employee emp2 = new Employee("Petr Petrov", 2, 3000, "IT");
-        Employee emp3 = new Employee("Sergey Sidorov", 3, 4000, "Marketing");
+        Employee emp3 = new Employee("Sergey Sidorov", 3, 4000, "Маркетинг");
 
         book.addEmployee(emp1);
         book.addEmployee(emp2);
