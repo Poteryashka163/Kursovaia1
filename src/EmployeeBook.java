@@ -18,47 +18,43 @@ public class EmployeeBook {
 
 
     public Employee[] getEmployees() {
+
         return employees;
     }
 
     public int getTotalSalary() {
         int totalSalary = 0;
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i] == null) {
-                continue;
+            if (employees[i] != null) {
+                totalSalary += employees[i].getSalary();
             }
-            totalSalary += employees[i].getSalary();
         }
         return totalSalary;
     }
 
     public Employee getMinSalaryEmployee() {
         Employee minEmployee = null;
-        int minSalary = Integer.MAX_VALUE;
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i] == null) {
-                continue;
-            }
-            if (employees[i].getSalary() < minSalary) {
-                minSalary = employees[i].getSalary();
-                minEmployee = employees[i];
+            if (employees[i] != null) {
+                if (minEmployee == null || employees[i].getSalary() < minEmployee.getSalary()) {
+                    minEmployee = employees[i];
+                }
             }
         }
+
         return minEmployee;
     }
 
     public Employee getMaxSalaryEmployee() {
         Employee maxEmployee = null;
-        int maxSalary = Integer.MIN_VALUE;
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i] == null) {
-                continue;
-            }
-            if (employees[i].getSalary() > maxSalary) {
-                maxSalary = employees[i].getSalary();
-                maxEmployee = employees[i];
+            if (employees[i] != null) {
+                if (maxEmployee == null || employees[i].getSalary() > maxEmployee.getSalary()) {
+                    maxEmployee = employees[i];
+                }
             }
         }
+
         return maxEmployee;
     }
 
